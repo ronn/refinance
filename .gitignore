@@ -28,3 +28,14 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+
+
+# IDEA Ignores #
+################
+
+*.bat
+gradlew
+.gradle/
+out/
+local.properties
