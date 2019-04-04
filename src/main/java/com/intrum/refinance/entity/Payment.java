@@ -1,5 +1,6 @@
 package com.intrum.refinance.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -17,7 +18,9 @@ public class Payment {
     private Double amount;
     private String channel;
 
-    private String debt = "";
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "debt_id")
+    private Debt debt;
 
     public Payment() {
     }
@@ -45,11 +48,12 @@ public class Payment {
         return channel;
     }
 
-    public void setDebt(String debt) {
-        this.debt = debt;
+    @JsonIgnore
+    public Debt getDebt() {
+        return debt;
     }
 
-    public String getDebt() {
-        return debt;
+    public void setDebt(Debt debt) {
+        this.debt = debt;
     }
 }
