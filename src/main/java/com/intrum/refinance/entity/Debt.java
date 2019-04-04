@@ -1,4 +1,4 @@
-package com.intrum.refinance;
+package com.intrum.refinance.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -18,8 +18,8 @@ public class Debt {
     private Integer interest;
 
 //    @OneToMany(mappedBy="debt", fetch= FetchType.EAGER)
-    @ElementCollection
-    private Set<String> payments;
+    /*@ElementCollection
+    private Set<String> payments;*/
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "debt_id")
@@ -32,7 +32,4 @@ public class Debt {
         this.interest = interest;
     }
 
-    public Set<String> getPayments() {
-        return payments;
-    }
 }

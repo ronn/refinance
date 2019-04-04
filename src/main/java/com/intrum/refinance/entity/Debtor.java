@@ -1,4 +1,4 @@
-package com.intrum.refinance;
+package com.intrum.refinance.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
